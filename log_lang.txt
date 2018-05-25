@@ -1,0 +1,56 @@
+models.crnn_lang
+Namespace(adadelta=False, adam=True, alphabet='0:1:2:3:4:5:6:7:8:9:a:b:c:d:e:f:g:h:i:j:k:l:m:n:o:p:q:r:s:t:u:v:w:x:y:z:$', batchSize=64, beta1=0.5, crnn='', cuda=True, displayInterval=100, experiment='expr_basic_lang', imgH=32, imgW=100, keep_ratio=False, lang=True, lr=0.001, n_test_disp=10, ngpu=1, nh=256, niter=1000, random_sample=False, saveInterval=4000, sep=':', trainlist='tool/train_zhengzhi.txt', valInterval=100, vallist='tool/val_zhengzhi.txt', workers=2)
+Random Seed:  3093
+4404
+CRNN (
+  (cnn): Sequential (
+    (0): Conv2d(1, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): ReLU (inplace)
+    (2): MaxPool2d (size=(2, 2), stride=(2, 2), dilation=(1, 1))
+    (3): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4): ReLU (inplace)
+    (5): MaxPool2d (size=(2, 2), stride=(2, 2), dilation=(1, 1))
+    (6): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (7): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True)
+    (8): ReLU (inplace)
+    (9): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (10): ReLU (inplace)
+    (11): MaxPool2d (size=(2, 2), stride=(2, 1), dilation=(1, 1))
+    (12): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (13): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True)
+    (14): ReLU (inplace)
+    (15): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (16): ReLU (inplace)
+    (17): MaxPool2d (size=(2, 2), stride=(2, 1), dilation=(1, 1))
+    (18): Conv2d(512, 512, kernel_size=(2, 2), stride=(1, 1))
+    (19): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True)
+    (20): ReLU (inplace)
+  )
+  (rnn): Sequential (
+    (0): BidirectionalLSTM (
+      (rnn): LSTM(512, 256, bidirectional=True)
+      (embedding): Linear (512 -> 256)
+    )
+    (1): BidirectionalLSTM (
+      (rnn): LSTM(256, 256, bidirectional=True)
+      (embedding): Linear (512 -> 256)
+    )
+  )
+  (attention): Attention (
+    (attention_cell): AttentionCell (
+      (i2h): Linear (256 -> 256)
+      (h2h): Linear (256 -> 256)
+      (score): Linear (256 -> 1)
+      (rnn): GRUCell(512, 256)
+    )
+    (generator): Linear (256 -> 6597)
+  )
+)
+[0/1000][100/4404] Loss: 6.027544
+time elapsed 24
+Start val
+Test loss: 7.822725, accuray: 0.000000
+[0/1000][200/4404] Loss: 4.989653
+time elapsed 32
+Start val
+Test loss: 7.415272, accuray: 0.000000

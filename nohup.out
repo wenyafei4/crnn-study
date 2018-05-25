@@ -1,0 +1,45 @@
+  File "train.py", line 250
+    else if epoch //10 < 3:
+          ^
+SyntaxError: invalid syntax
+  File "train.py", line 250
+    else if epoch //10 < 3:
+          ^
+SyntaxError: invalid syntax
+  File "train.py", line 250
+    else if epoch //10 < 3:
+          ^
+SyntaxError: invalid syntax
+  File "train.py", line 250
+    else if epoch //10 < 3:
+          ^
+SyntaxError: invalid syntax
+  File "train.py", line 250
+    else if epoch //10 < 3:
+          ^
+SyntaxError: invalid syntax
+  File "train.py", line 250
+    else if epoch //10 < 3:
+          ^
+SyntaxError: invalid syntax
+usage: train.py [-h] --trainlist TRAINLIST --vallist VALLIST
+                [--workers WORKERS] [--batchSize BATCHSIZE] [--imgH IMGH]
+                [--imgW IMGW] [--nh NH] [--niter NITER] [--lr LR]
+                [--beta1 BETA1] [--cuda] [--ngpu NGPU] [--crnn CRNN]
+                [--alphabet ALPHABET] [--sep SEP] [--experiment EXPERIMENT]
+                [--displayInterval DISPLAYINTERVAL]
+                [--n_test_disp N_TEST_DISP] [--valInterval VALINTERVAL]
+                [--saveInterval SAVEINTERVAL] [--adam] [--adadelta]
+                [--keep_ratio] [--lang] [--random_sample]
+train.py: error: argument --experiment: expected one argument
+usage: val_attCTC.py [-h] --trainlist TRAINLIST --vallist VALLIST
+                     [--workers WORKERS] [--batchSize BATCHSIZE] [--imgH IMGH]
+                     [--imgW IMGW] [--nh NH] [--niter NITER] [--lr LR]
+                     [--beta1 BETA1] [--cuda] [--ngpu NGPU] [--crnn CRNN]
+                     [--alphabet ALPHABET] [--sep SEP]
+                     [--experiment EXPERIMENT]
+                     [--displayInterval DISPLAYINTERVAL]
+                     [--n_test_disp N_TEST_DISP] [--valInterval VALINTERVAL]
+                     [--saveInterval SAVEINTERVAL] [--adam] [--adadelta]
+                     [--keep_ratio] [--lang] [--random_sample]
+val_attCTC.py: error: argument --trainlist is required

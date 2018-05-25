@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=7 python main.py --lang --experiment expr_basic_lang --trainlist tool/train_zhengzhi.txt --vallist tool/val_zhengzhi.txt --cuda --adam --lr=0.001 --saveInterval=4000 --displayInterval=100 --valInterval=1000 --random_sample --keep_ratio
